@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Intervalo from './components/Intervalo';
@@ -16,9 +15,9 @@ function App() {
         <Intervalo></Intervalo>
       </div>
       <div className="linha">
+        <Media />
         <Soma />
         <Sorteio />
-        <Media />
       </div>
     </div>
   );
