@@ -1,15 +1,17 @@
 import React from 'react'
 
 import Card from './Card'
-import './Media.css'
 
 export default props => {
+
+    const {min, max} = props
+
     return (
         <Card title="Média dos números" green>
             <div className="">
                 <span>
-                    <span>Resultado</span>
-                    <strong>10</strong>
+                    <span>Resultado: </span>
+                    <strong>{(max + min) / 2}</strong>
                 </span>
             </div>
         </Card>

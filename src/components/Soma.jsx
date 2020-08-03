@@ -1,15 +1,17 @@
 import React from 'react'
 
-import './Soma.css'
 import Card from './Card'
 
 export default props => {
+
+    const {min, max} = props
+
     return (
         <Card title="Soma dos números" red>
             <div className="">
                 <span>
-                    <span>Resultado:</span>
-                    <strong>10</strong>                </span>
+                    <span>Resultado: </span>
+                    <strong>{min + max}</strong>                </span>
             </div>
         </Card>
     )
