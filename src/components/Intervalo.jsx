@@ -1,8 +1,12 @@
 import React from 'react'
 
 import Card from './Card'
+import { connect } from 'react-redux'
 
-export default props => {
+const Intervalo = props => {
+
+    const {max, min} = props
+
     return (
         <Card title="Intervalo de números" blue>
             <div className="Intervalo">
@@ -10,7 +14,7 @@ export default props => {
                     <strong>Mínimo: </strong>
                     <input
                         type="number"
-                        value={12} 
+                        value={props.min} 
                         readOnly
                     />
                 </span>
@@ -18,7 +22,7 @@ export default props => {
                     <strong>Máximo: </strong>
                     <input
                         type="number"
-                        value={120}
+                        value={props.max}
                        readOnly
                     />
                 </span>
@@ -26,3 +30,12 @@ export default props => {
         </Card>
     )
 }
+
+function mapStateToProps(state) {
+    return {
+        max: state.numeros.max,
+        min: state.numeros.min
+    }
+}
+
+export default connect(mapStateToProps)(Intervalo)
